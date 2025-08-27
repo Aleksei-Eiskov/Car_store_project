@@ -1,0 +1,21 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: car_store_api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./data:/app/data
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.bot
+    container_name: car_store_bot
+    depends_on:
+      - api
+    env_file:
+      - .env

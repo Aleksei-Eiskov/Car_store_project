@@ -1,0 +1,26 @@
+* text=auto
+
+# LF 
+*.py text eol=lf
+*.sh text eol=lf
+Dockerfile* text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# CRLF
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+
+.gitattributes text eol=lf
+
+# keep LF for env examples
+.env.example text eol=lf
+*.example text eol=lf
